@@ -37,13 +37,13 @@ h1 {
 
 .malla-container {
     display: flex;
-    overflow-x: auto; /* Permite scroll horizontal en pantallas pequeñas */
+    overflow-x: auto;
     padding-bottom: 20px;
     gap: 15px;
 }
 
 .semester {
-    flex: 0 0 180px; /* Ancho fijo para cada semestre */
+    flex: 0 0 200px; /* Aumentamos un poco el ancho para los bimestres */
     padding: 10px;
     background-color: #e9ecef;
     border-radius: 8px;
@@ -73,6 +73,24 @@ h2 {
     transform: translateY(-3px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
+
+/* --- NUEVOS ESTILOS PARA BIMESTRES --- */
+.bimester-container {
+    background-color: #dde5ed;
+    border: 1px solid #c8d3e0;
+    border-radius: 6px;
+    padding: 8px;
+    margin-top: 15px;
+}
+
+.bimester-container h3 {
+    font-size: 0.85em;
+    color: #495057;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+/* ------------------------------------ */
 
 /* Estilos de resaltado */
 .course-box.selected {
