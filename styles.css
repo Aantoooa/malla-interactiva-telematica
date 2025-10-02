@@ -119,3 +119,49 @@ h2 {
     background-color: #B6DBF2;
     border-color: #A1CDE9;
 }
+/* --- ESTILOS PARA LA VENTANA MODAL --- */
+
+/* El fondo oscuro semitransparente */
+.modal-overlay {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Se queda fijo en la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Color de fondo */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Se asegura de que esté por encima de todo */
+}
+
+/* La ventana blanca del contenido */
+.modal-content {
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* El botón para cerrar (la 'X') */
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    color: #333;
+}
+
+/* Clase que se usará con JS para mostrar el modal */
+.modal-overlay.show-modal {
+    display: flex;
+}
