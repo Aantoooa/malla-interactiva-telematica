@@ -94,23 +94,23 @@ h2 {
 
 /* Estilos de resaltado */
 .course-box.selected {
-    background-color: #007bff;
+    background-color: #F06AA3;
     color: white;
     border-color: #0056b3;
 }
 
 .course-box.prerequisite {
-    background-color: #ffc107;
+    background-color: #F08BB8;
     color: #333;
-    border-color: #e0a800;
+    border-color: #F07BA9;
 }
 
 /* Para la leyenda */
 .legend-item .selected {
-    background-color: #007bff;
+    background-color: #F06AA3;
     border-color: #0056b3;
 }
 .legend-item .prerequisite {
-    background-color: #ffc107;
-    border-color: #e0a800;
+    background-color: #F08BB8;
+    border-color: #F07BA9;
 }
