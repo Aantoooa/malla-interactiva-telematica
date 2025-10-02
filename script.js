@@ -1,28 +1,148 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const courses = document.querySelectorAll('.course-box');
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malla Interactiva - Ingeniería Civil Telemática</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    courses.forEach(course => {
-        course.addEventListener('click', () => {
-            // 1. Limpiar todos los resaltados previos
-            courses.forEach(c => {
-                c.classList.remove('selected', 'prerequisite');
-            });
+    <div class="header">
+        <h1>Malla Curricular Interactiva</h1>
+        <p>Ingeniería Civil Telemática - Universidad de La Frontera</p>
+        <div class="legend">
+            <div class="legend-item">
+                <div class="box selected"></div>
+                <span>Asignatura Seleccionada</span>
+            </div>
+            <div class="legend-item">
+                <div class="box prerequisite"></div>
+                <span>Prerrequisito</span>
+            </div>
+        </div>
+    </div>
 
-            // 2. Resaltar la asignatura seleccionada
-            course.classList.add('selected');
+    <div class="malla-container">
+        <div class="semester">
+            <h2>Semestre I</h2>
+            <div class="course-box" id="ING050" data-prerequisites=""><strong>ING050</strong><br>Ingeniería y Sociedad</div>
+            <div class="course-box" id="ICQ050" data-prerequisites=""><strong>ICQ050</strong><br>Introducción a la Química</div>
+            <div class="course-box" id="DFI052" data-prerequisites=""><strong>DFI052</strong><br>Habilidades Comunicativas</div>
+            
+            <div class="bimester-container">
+                <h3>Bimestre 1</h3>
+                <div class="course-box" id="IME027" data-prerequisites=""><strong>IME027</strong><br>Precálculo I</div>
+                <div class="course-box" id="IME028" data-prerequisites=""><strong>IME028</strong><br>Introducción al Álgebra</div>
+            </div>
 
-            // 3. Obtener y resaltar los prerrequisitos
-            const prerequisites = course.dataset.prerequisites;
-            if (prerequisites) {
-                const prereqArray = prerequisites.split(',');
-                
-                prereqArray.forEach(prereqId => {
-                    const prereqElement = document.getElementById(prereqId.trim());
-                    if (prereqElement) {
-                        prereqElement.classList.add('prerequisite');
-                    }
-                });
-            }
-        });
-    });
-});
+            <div class="bimester-container">
+                <h3>Bimestre 2</h3>
+                <div class="course-box" id="IME029" data-prerequisites="IME027"><strong>IME029</strong><br>Precálculo II</div>
+                <div class="course-box" id="IME030" data-prerequisites="IME028"><strong>IME030</strong><br>Álgebra</div>
+            </div>
+        </div>
+
+        <div class="semester">
+            <h2>Semestre II</h2>
+            <div class="course-box" id="ING101" data-prerequisites=""><strong>ING101</strong><br>Introducción al Diseño de Ingeniería</div>
+            <div class="course-box" id="ICF115" data-prerequisites="IME029"><strong>ICF115</strong><br>Física I</div>
+            <div class="course-box" id="ING104" data-prerequisites=""><strong>ING104</strong><br>Laboratorio de Ciencias</div>
+
+             <div class="bimester-container">
+                <h3>Bimestre 3</h3>
+                <div class="course-box" id="IME045" data-prerequisites="IME029"><strong>IME045</strong><br>Cálculo Diferencial</div>
+                 <div class="course-box" id="IME046" data-prerequisites=""><strong>IME046</strong><br>Matemática para la Computación I</div>
+            </div>
+
+            <div class="bimester-container">
+                <h3>Bimestre 4</h3>
+                <div class="course-box" id="IME048" data-prerequisites="IME045"><strong>IME048</strong><br>Cálculo Integral</div>
+                <div class="course-box" id="IME047" data-prerequisites="IME046"><strong>IME047</strong><br>Matemática para la Computación II</div>
+            </div>
+        </div>
+
+        <div class="semester">
+            <h2>Semestre III</h2>
+            <div class="course-box" id="ING180" data-prerequisites=""><strong>ING180</strong><br>Ecodiseño</div>
+            <div class="course-box" id="ICF177" data-prerequisites="ICF115,IME048"><strong>ICF177</strong><br>Física II</div>
+            <div class="course-box" id="ICC157" data-prerequisites="ING104"><strong>ICC157</strong><br>Taller de Programación</div>
+            <div class="course-box" id="IME298" data-prerequisites="IME048"><strong>IME298</strong><br>Cálculo Multivariable</div>
+            <div class="course-box" id="IME299" data-prerequisites="IME030"><strong>IME299</strong><br>Álgebra Lineal</div>
+        </div>
+
+        <div class="semester">
+            <h2>Semestre IV</h2>
+            <div class="course-box" id="ING200" data-prerequisites="ING101,ING180"><strong>ING200</strong><br>Taller de Diseño de Ingeniería</div>
+            <div class="course-box" id="ICF489" data-prerequisites="ICF177,IME298"><strong>ICF489</strong><br>Física III</div>
+            <div class="course-box" id="IIE339" data-prerequisites="IME317"><strong>IIE339</strong><br>Herramientas de Análisis de Señales</div>
+            <div class="course-box" id="IME317" data-prerequisites="IME299"><strong>IME317</strong><br>Ecuaciones Diferenciales</div>
+            <div class="course-box" id="IME396" data-prerequisites="IME298"><strong>IME396</strong><br>Probabilidad y Estadística</div>
+        </div>
+        
+        <div class="semester">
+            <h2>Semestre V</h2>
+            <div class="course-box" id="IIS255" data-prerequisites="ING101"><strong>IIS255</strong><br>Economía y Finanzas Empresariales</div>
+            <div class="course-box" id="IIE219" data-prerequisites="ICF489"><strong>IIE219</strong><br>Ingeniería Electromagnética</div>
+            <div class="course-box" id="ICC607" data-prerequisites="ICC157"><strong>ICC607</strong><br>Internet y Sistemas Operativos</div>
+            <div class="course-box" id="IIE344" data-prerequisites="ICC157"><strong>IIE344</strong><br>Estructura de Datos y Algoritmos</div>
+        </div>
+
+        <div class="semester">
+            <h2>Semestre VI</h2>
+            <div class="course-box" id="IIS595" data-prerequisites="ING200"><strong>IIS595</strong><br>Diseño Integral de Productos</div>
+            <div class="course-box" id="ICC615" data-prerequisites="ICC607"><strong>ICC615</strong><br>Bases de Datos</div>
+            <div class="course-box" id="IIE547" data-prerequisites="IIE344"><strong>IIE547</strong><br>Protocolos de Comunicación y S. Embebidos</div>
+            <div class="course-box" id="IIE548" data-prerequisites="IME396"><strong>IIE548</strong><br>Teoría de Información</div>
+            <div class="course-box" id="IIE549" data-prerequisites="IIE219"><strong>IIE549</strong><br>Electrónica I</div>
+            <div class="course-box" id="IIE551" data-prerequisites="IIE344"><strong>IIE551</strong><br>Programación Avanzada y App Móviles</div>
+        </div>
+        
+        <div class="semester">
+            <h2>Semestre VII</h2>
+            <div class="course-box" id="IIS598" data-prerequisites="IIS255"><strong>IIS598</strong><br>Diseño de Negocios Innovadores</div>
+            <div class="course-box" id="IIE351" data-prerequisites="IIE339"><strong>IIE351</strong><br>Procesamiento Digital de Señales</div>
+            <div class="course-box" id="IIE588" data-prerequisites="IIE548"><strong>IIE588</strong><br>Sistemas de Comunicaciones</div>
+            <div class="course-box" id="IIE665" data-prerequisites="IIE549"><strong>IIE665</strong><br>Electrónica II</div>
+            <div class="course-box" id="IIE393" data-prerequisites="IIE547"><strong>IIE393</strong><br>Redes de Datos</div>
+        </div>
+        
+        <div class="semester">
+            <h2>Semestre VIII</h2>
+            <div class="course-box" id="ING300" data-prerequisites="IIS598"><strong>ING300</strong><br>Taller de Empresas Tecnológicas</div>
+            <div class="course-box" id="IIE668" data-prerequisites="IIE588"><strong>IIE668</strong><br>Comunicaciones Digitales</div>
+            <div class="course-box" id="IIE669" data-prerequisites="IIE665"><strong>IIE669</strong><br>Sistemas Digitales</div>
+            <div class="course-box" id="IIE670" data-prerequisites="IIE393"><strong>IIE670</strong><br>Tecnología y Servicios de Internet</div>
+            <div class="course-box" id="IIE671" data-prerequisites="ICC615,IIE551"><strong>IIE671</strong><br>Tópicos de Ing. de Software y Des. Web</div>
+        </div>
+
+        <div class="semester">
+            <h2>Semestre IX</h2>
+             <div class="course-box" id="I74720" data-prerequisites=""><strong>I74720</strong><br>Práctica de Estudios I</div>
+            <div class="course-box" id="IIE680" data-prerequisites="IIE668,I74720"><strong>IIE680</strong><br>Comunicaciones Inalámbricas</div>
+            <div class="course-box" id="IIE687" data-prerequisites="IIE670,I74720"><strong>IIE687</strong><br>Computación en la Nube y Ciberseguridad</div>
+            <div class="course-box" id="IIE693" data-prerequisites="ING300,I74720"><strong>IIE693</strong><br>Gestión de Proyectos TI</div>
+            <div class="course-box" id="IIE685" data-prerequisites="I74720"><strong>IIE685</strong><br>Electivo de Especialidad I</div>
+        </div>
+
+        <div class="semester">
+            <h2>Semestre X</h2>
+            <div class="course-box" id="ING500" data-prerequisites="ING300"><strong>ING500</strong><br>Capstone Multidisciplinario</div>
+            <div class="course-box" id="IIE710" data-prerequisites="IIE669,IIE671"><strong>IIE710</strong><br>Internet de las Cosas y Comp. en el Borde</div>
+            <div class="course-box" id="IIE720" data-prerequisites="IIE693"><strong>IIE720</strong><br>Ética Profesional</div>
+            <div class="course-box" id="IIE689" data-prerequisites="I74720"><strong>IIE689</strong><br>Electivo de Especialidad II</div>
+            <div class="course-box" id="IIE698" data-prerequisites="IIE665"><strong>IIE698</strong><br>Comunicaciones Ópticas</div>
+        </div>
+        
+        <div class="semester">
+            <h2>Semestre XI</h2>
+            <div class="course-box" id="IIE675" data-prerequisites="IIE669,IIE671,I74720"><strong>IIE675</strong><br>Diseño de Proyectos e Ing. Telemática</div>
+            <div class="course-box" id="I74725" data-prerequisites=""><strong>I74725</strong><br>Práctica de Estudios II</div>
+            <div class="course-box" id="IIE700" data-prerequisites=""><strong>IIE700</strong><br>Electivo de Especialidad III</div>
+            <div class="course-box" id="IIE705" data-prerequisites=""><strong>IIE705</strong><br>Electivo de Especialidad IV</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
