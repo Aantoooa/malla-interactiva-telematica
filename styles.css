@@ -20,7 +20,7 @@ body {
 }
 
 h1 {
-    color: #8A2BE2;
+    color: #5080BF;
 }
 
 .legend {
@@ -60,7 +60,7 @@ h1 {
 
 h2 {
     font-size: 1em;
-    color: #006400;
+    color: #5080BF;
     margin-bottom: 15px;
 }
 
@@ -99,23 +99,23 @@ h2 {
 }
 
 .course-box.selected {
-    background-color: #F06AA3;
+    background-color: #6CA6D9;
     color: white;
-    border-color: #C74D83;
+    border-color: #659ED0;
 }
 
 .course-box.prerequisite {
-    background-color: #F08BB8;
+    background-color: #B6DBF2;
     color: #333;
-    border-color: #E372A2;
+    border-color: #A1CDE9;
 }
 
 .legend-item .selected {
-    background-color: #F06AA3;
-    border-color: #C74D83;
+    background-color: #6CA6D9;
+    border-color: #659ED0;
 }
 
 .legend-item .prerequisite {
-    background-color: #F08BB8;
-    border-color: #E372A2;
+    background-color: #B6DBF2;
+    border-color: #A1CDE9;
 }
