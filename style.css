@@ -43,7 +43,7 @@ h1 {
 }
 
 .semester {
-    flex: 0 0 200px; /* Aumentamos un poco el ancho para los bimestres */
+    flex: 0 0 200px;
     padding: 10px;
     background-color: #e9ecef;
     border-radius: 8px;
@@ -74,7 +74,6 @@ h2 {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* --- NUEVOS ESTILOS PARA BIMESTRES --- */
 .bimester-container {
     background-color: #dde5ed;
     border: 1px solid #c8d3e0;
@@ -90,27 +89,28 @@ h2 {
     margin-bottom: 10px;
     font-weight: bold;
 }
-/* ------------------------------------ */
 
-/* Estilos de resaltado */
+/* --- ESTILOS DE RESALTADO CORREGIDOS --- */
+/* Estilos para la asignatura que seleccionas */
 .course-box.selected {
-    background-color: #F06AA3;
+    background-color: #F06AA3; /* Tu color rosado principal */
     color: white;
-    border-color: #0056b3;
+    border-color: #C74D83; /* Un borde rosado más oscuro para que combine */
 }
 
+/* Estilos para las asignaturas que son prerrequisito */
 .course-box.prerequisite {
-    background-color: #F08BB8;
+    background-color: #F08BB8; /* Tu color rosado secundario */
     color: #333;
-    border-color: #F07BA9;
+    border-color: #E372A2; /* Un borde rosado más oscuro para que combine */
 }
 
-/* Para la leyenda */
+/* Para la leyenda, usando los mismos colores para consistencia */
 .legend-item .selected {
     background-color: #F06AA3;
-    border-color: #0056b3;
+    border-color: #C74D83; /* Borde rosado oscuro */
 }
 .legend-item .prerequisite {
     background-color: #F08BB8;
-    border-color: #F07BA9;
+    border-color: #E372A2; /* Borde rosado oscuro */
 }
