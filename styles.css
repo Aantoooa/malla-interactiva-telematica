@@ -165,3 +165,28 @@ h2 {
 .modal-overlay.show-modal {
     display: flex;
 }
+/* --- ESTILOS PARA LOS GIFS DEL HEADER --- */
+
+/* Prepara el contenedor del header para posicionar los GIFs dentro de él */
+.header {
+    position: relative; /* ¡Esta línea es muy importante! */
+}
+
+/* Estilo general para ambos GIFs */
+.header-gif {
+    position: absolute; /* Permite posicionarlos con precisión */
+    top: 50%; /* Los centra verticalmente */
+    transform: translateY(-50%);
+    width: 60px;  /* Ajusta el tamaño a tu gusto */
+    height: 60px; /* Ajusta el tamaño a tu gusto */
+}
+
+/* Posición específica para el GIF de la izquierda */
+.left-gif {
+    left: 20px; /* Distancia desde el borde izquierdo */
+}
+
+/* Posición específica para el GIF de la derecha */
+.right-gif {
+    right: 20px; /* Distancia desde el borde derecho */
+}
