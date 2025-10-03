@@ -177,8 +177,8 @@ h2 {
     position: absolute; /* Permite posicionarlos con precisión */
     top: 50%; /* Los centra verticalmente */
     transform: translateY(-50%);
-    width: 60px;  /* Ajusta el tamaño a tu gusto */
-    height: 60px; /* Ajusta el tamaño a tu gusto */
+    width: 20px;  /* Ajusta el tamaño a tu gusto */
+    height: 20px; /* Ajusta el tamaño a tu gusto */
 }
 
 /* Posición específica para el GIF de la izquierda */
